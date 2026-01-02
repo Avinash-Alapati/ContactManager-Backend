@@ -12,8 +12,9 @@ app.get('/' , (req , res) => {
 
 })
 
-app.use(express.json()); // To parse the data recieved in POST req
+app.use(express.json()); // To parse the data recieved in POST req undefined --> JSON
 app.use("/api/contacts" , require("./routes/contactRoutes"));
+app.use("/api/users" , require("./routes/userRoutes"));
 app.use(errorHandler);
 
 app.listen(port , () => {
